@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5ed0ae57fa6d240bbaac10b336fa87, type: 3}
+  m_Name: Human
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 0}
+  _id: human
+  _name: Human
+  _maxHealth: 100
+  _maxHunger: 100
+  _hungerDecayRate: 1
+  _hungerFillRate: 100
+  _movementSpeed: 10
+  _detectionRadius: 50
+  _detectionInterval: 1
+  _prey:
+  - {fileID: 11400000, guid: 304e71c198c44044d9ef1e80046d6af5, type: 2}
+  - {fileID: 11400000, guid: 47523ccbc36168f4d8f3e6a50a39f5f9, type: 2}
+  - {fileID: 11400000, guid: ad4f8abab3062b943b3ba80420a946d5, type: 2}
+  - {fileID: 11400000, guid: 1430309d95471d14ba5fb4e5269cc652, type: 2}
