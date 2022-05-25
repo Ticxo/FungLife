@@ -15,15 +15,19 @@ MonoBehaviour:
   _sprite: {fileID: 21300000, guid: 954d3206801a274438e98fa88ca22301, type: 3}
   _id: fox
   _name: Fox
-  _maxHealth: 100
-  _maxHunger: 100
-  _hungerDecayRate: 1
-  _hungerFillRate: 100
-  _movementSpeed: 10
-  _detectionRadius: 50
-  _detectionInterval: 1
+  _spawnCost: 0
+  _maxHealth: 40
+  _healthFillRate: 20
+  _damage: 8
+  _attackRange: 0.5
+  _scale: 1
+  _movementSpeed: 6
+  _detectionRadius: 15
+  _detectionInterval: 0.05
   _prey:
+  - {fileID: 11400000, guid: 1d0bc16c34f667144bd6a5b9c4bccb3d, type: 2}
   - {fileID: 11400000, guid: a84fd4d2513693c4091754a903ae3469, type: 2}
   - {fileID: 11400000, guid: 2ed517325f8a9e94a8d6b5f65408da9e, type: 2}
   - {fileID: 11400000, guid: 579754088ba4ed94182a4dca70f4dfe9, type: 2}
-  - {fileID: 11400000, guid: 1430309d95471d14ba5fb4e5269cc652, type: 2}
+  - {fileID: 11400000, guid: ad4f8abab3062b943b3ba80420a946d5, type: 2}
+  - {fileID: 11400000}

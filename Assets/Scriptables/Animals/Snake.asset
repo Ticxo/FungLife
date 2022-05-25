@@ -12,17 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5ed0ae57fa6d240bbaac10b336fa87, type: 3}
   m_Name: Snake
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: 0d358db193f15b14896f1a160d52976c, type: 3}
   _id: snake
   _name: Snake
-  _maxHealth: 100
-  _maxHunger: 100
-  _hungerDecayRate: 1
-  _hungerFillRate: 100
-  _movementSpeed: 10
-  _detectionRadius: 50
-  _detectionInterval: 1
+  _spawnCost: 0
+  _maxHealth: 40
+  _healthFillRate: 20
+  _damage: 8
+  _attackRange: 0.5
+  _scale: 1
+  _movementSpeed: 4
+  _detectionRadius: 18
+  _detectionInterval: 0.05
   _prey:
   - {fileID: 11400000, guid: 1d0bc16c34f667144bd6a5b9c4bccb3d, type: 2}
+  - {fileID: 11400000, guid: 2ed517325f8a9e94a8d6b5f65408da9e, type: 2}
   - {fileID: 11400000, guid: 579754088ba4ed94182a4dca70f4dfe9, type: 2}
   - {fileID: 11400000, guid: a84fd4d2513693c4091754a903ae3469, type: 2}
+  - {fileID: 11400000, guid: 47523ccbc36168f4d8f3e6a50a39f5f9, type: 2}
+  - {fileID: 11400000}

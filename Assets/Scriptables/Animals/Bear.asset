@@ -12,17 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5ed0ae57fa6d240bbaac10b336fa87, type: 3}
   m_Name: Bear
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: 4fe438c7f892f094aa3a5aeb64f2214d, type: 3}
+  _sprite: {fileID: 21300000, guid: f2e3284629fc37846b113441b9c96aac, type: 3}
   _id: bear
   _name: Bear
+  _spawnCost: 0
   _maxHealth: 100
-  _maxHunger: 100
-  _hungerDecayRate: 1
-  _hungerFillRate: 100
-  _movementSpeed: 10
-  _detectionRadius: 50
-  _detectionInterval: 1
+  _healthFillRate: 50
+  _damage: 20
+  _attackRange: 0.75
+  _scale: 1.5
+  _movementSpeed: 5
+  _detectionRadius: 25
+  _detectionInterval: 0.05
   _prey:
-  - {fileID: 11400000, guid: 795836040fb28104e80c7f558ee80c9f, type: 2}
+  - {fileID: 11400000, guid: 2ed517325f8a9e94a8d6b5f65408da9e, type: 2}
   - {fileID: 11400000, guid: 47523ccbc36168f4d8f3e6a50a39f5f9, type: 2}
-  - {fileID: 11400000, guid: 1430309d95471d14ba5fb4e5269cc652, type: 2}
+  - {fileID: 11400000, guid: a84fd4d2513693c4091754a903ae3469, type: 2}
+  - {fileID: 11400000, guid: 579754088ba4ed94182a4dca70f4dfe9, type: 2}
+  - {fileID: 11400000, guid: 795836040fb28104e80c7f558ee80c9f, type: 2}
+  - {fileID: 11400000, guid: 1d0bc16c34f667144bd6a5b9c4bccb3d, type: 2}
+  - {fileID: 11400000, guid: ad4f8abab3062b943b3ba80420a946d5, type: 2}
+  - {fileID: 11400000}

@@ -15,12 +15,17 @@ MonoBehaviour:
   _sprite: {fileID: 21300000, guid: 7c5ebddcd1fd7bd40b2c19bd24b0cf6b, type: 3}
   _id: bird
   _name: Bird
-  _maxHealth: 100
-  _maxHunger: 100
-  _hungerDecayRate: 1
-  _hungerFillRate: 100
-  _movementSpeed: 10
-  _detectionRadius: 50
-  _detectionInterval: 1
+  _spawnCost: 0
+  _maxHealth: 20
+  _healthFillRate: 10
+  _damage: 5
+  _attackRange: 0.4
+  _scale: 0.8
+  _movementSpeed: 7
+  _detectionRadius: 25
+  _detectionInterval: 0.05
   _prey:
   - {fileID: 11400000, guid: 729b21e7d16ed104f96375c453ba9116, type: 2}
+  - {fileID: 11400000, guid: a84fd4d2513693c4091754a903ae3469, type: 2}
+  - {fileID: 11400000, guid: 747d8cd9e6d3abb49a95353e9ad20885, type: 2}
+  - {fileID: 11400000, guid: 1d0bc16c34f667144bd6a5b9c4bccb3d, type: 2}
