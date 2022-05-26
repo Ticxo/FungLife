@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Human
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 97c976dbee6084f4184a71778e191e00, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: ab7c2d1fe77436b41bfd114d087b48a9, type: 3}
   _id: human
   _name: Human
-  _spawnCost: 0
+  _spawnCost: 1
+  _playEatenEffect: 1
   _maxHealth: 100
   _healthFillRate: 30
   _damage: 20
@@ -23,7 +25,7 @@ MonoBehaviour:
   _scale: 1.5
   _movementSpeed: 5
   _detectionRadius: 25
-  _detectionInterval: 0.05
+  _detectionInterval: 0.2
   _prey:
   - {fileID: 11400000, guid: 304e71c198c44044d9ef1e80046d6af5, type: 2}
   - {fileID: 11400000, guid: 2ed517325f8a9e94a8d6b5f65408da9e, type: 2}

@@ -7,7 +7,7 @@ public class AnimalManager : MonoBehaviour {
     public static AnimalManager instance;
 
     [SerializeField] private PlayerController controller;
-    public PlayerController Controller { get => controller; }
+    public PlayerController Controller { get => controller; set => controller = value; }
 
     private Dictionary<SOAnimal, HashSet<Animal>> animals = new Dictionary<SOAnimal, HashSet<Animal>>();
 

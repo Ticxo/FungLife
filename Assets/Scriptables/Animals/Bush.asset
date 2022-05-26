@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Bush
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 0e1b2072edcc779448280a9bd745e7c3, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: 0e1b2072edcc779448280a9bd745e7c3, type: 3}
   _id: bush
   _name: Bush
   _spawnCost: 0
+  _playEatenEffect: 0
   _maxHealth: 1
   _healthFillRate: 10
   _damage: 0
@@ -23,5 +25,5 @@ MonoBehaviour:
   _scale: 1
   _movementSpeed: 0
   _detectionRadius: 10
-  _detectionInterval: 0
+  _detectionInterval: 0.2
   _prey: []

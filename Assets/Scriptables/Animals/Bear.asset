@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Bear
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: f2e3284629fc37846b113441b9c96aac, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: e2908f3fa17197642ab1224aa73bd614, type: 3}
   _id: bear
   _name: Bear
-  _spawnCost: 0
+  _spawnCost: 1
+  _playEatenEffect: 1
   _maxHealth: 100
   _healthFillRate: 50
   _damage: 20
@@ -23,7 +25,7 @@ MonoBehaviour:
   _scale: 1.5
   _movementSpeed: 5
   _detectionRadius: 25
-  _detectionInterval: 0.05
+  _detectionInterval: 0.2
   _prey:
   - {fileID: 11400000, guid: 2ed517325f8a9e94a8d6b5f65408da9e, type: 2}
   - {fileID: 11400000, guid: 47523ccbc36168f4d8f3e6a50a39f5f9, type: 2}

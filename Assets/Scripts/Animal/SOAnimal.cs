@@ -7,9 +7,11 @@ public class SOAnimal : ScriptableObject {
     
     [Header("General")]
     [SerializeField] private Sprite _sprite;
+    [SerializeField] private Sprite _possessedSprite;
     [SerializeField] private string _id;
     [SerializeField] private string _name;
     [SerializeField] private int _spawnCost;
+    [SerializeField] private bool _playEatenEffect;
     [Header("Stats")]
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _healthFillRate;
@@ -23,9 +25,11 @@ public class SOAnimal : ScriptableObject {
     [SerializeField] private List<SOAnimal> _prey;
 
     public Sprite Sprite { get => _sprite; }
+    public Sprite PossessedSprite { get => _possessedSprite; }
     public string Id { get => _id; }
     public string Name { get => _name; }
     public int SpawnCost { get => _spawnCost; }
+    public bool PlayEatenEffect { get => _playEatenEffect; }
     public float MaxHealth { get => _maxHealth; }
     public float HealthFillRate { get => _healthFillRate; }
     public float Damage { get => _damage; }

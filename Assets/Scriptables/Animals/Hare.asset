@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Hare
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 42e0ca98099223f4fb3e94f452bb81a2, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: 493b4d07e64cfc44e8ee5a5cb1174bc5, type: 3}
   _id: hare
   _name: Hare
-  _spawnCost: 0
+  _spawnCost: 1
+  _playEatenEffect: 1
   _maxHealth: 20
   _healthFillRate: 15
   _damage: 3
@@ -23,7 +25,7 @@ MonoBehaviour:
   _scale: 0.8
   _movementSpeed: 5
   _detectionRadius: 12
-  _detectionInterval: 0.05
+  _detectionInterval: 0.2
   _prey:
   - {fileID: 11400000, guid: d2b04914ab3de414daf93b79b89d372f, type: 2}
   - {fileID: 11400000, guid: f245a3ff97f30f649b5c4bd5f0a6bf4a, type: 2}

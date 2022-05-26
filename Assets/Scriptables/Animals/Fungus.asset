@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Fungus
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 464802611fac18143a8839ac88b0265e, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: 464802611fac18143a8839ac88b0265e, type: 3}
   _id: fungus
   _name: Fungus
-  _spawnCost: 0
+  _spawnCost: 1
+  _playEatenEffect: 0
   _maxHealth: 1
   _healthFillRate: 10
   _damage: 0
@@ -23,5 +25,5 @@ MonoBehaviour:
   _scale: 1
   _movementSpeed: 0
   _detectionRadius: 10
-  _detectionInterval: 0
+  _detectionInterval: 0.2
   _prey: []

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Cockroach
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 59a50f2cd7305504eaf10ed4702518da, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: e99c78df7a67a7247af820f2e44b269c, type: 3}
   _id: cockroach
   _name: Cockroach
-  _spawnCost: 0
+  _spawnCost: 1
+  _playEatenEffect: 1
   _maxHealth: 10
   _healthFillRate: 5
   _damage: 2
@@ -23,7 +25,7 @@ MonoBehaviour:
   _scale: 1
   _movementSpeed: 5
   _detectionRadius: 10
-  _detectionInterval: 0.05
+  _detectionInterval: 0.2
   _prey:
   - {fileID: 11400000, guid: d2b04914ab3de414daf93b79b89d372f, type: 2}
   - {fileID: 11400000, guid: f245a3ff97f30f649b5c4bd5f0a6bf4a, type: 2}

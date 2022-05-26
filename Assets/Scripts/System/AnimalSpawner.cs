@@ -33,7 +33,7 @@ public class AnimalSpawner : MonoBehaviour {
             int chance = Random.Range(0, GetTotalWeight()) + 1;
             SOAnimal type = GetAnimalType(chance);
             
-            if(AnimalManager.instance.SpawnCount + type.SpawnCost >= maxSpawnCount)
+            if(AnimalManager.instance.SpawnCount + type.SpawnCost > maxSpawnCount)
                 continue;
 
             Vector3 pos = new Vector3(Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange), 0);

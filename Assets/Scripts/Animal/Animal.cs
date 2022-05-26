@@ -4,18 +4,35 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour {
 
+    public delegate void AnimalPossess(Animal possessed);
+    public static event AnimalPossess animalPossessEvent;
+
+    public delegate void AnimalDeath(Animal target, Animal killer);
+    public static event AnimalDeath animalDeathEvent;
+
     private bool isInitialized = false;
     [SerializeField] private SOAnimal animalType;
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private AIHandler aiHandler;
     [SerializeField] private float waddleAngle;
     [SerializeField] private float waddleSpeed;
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem bloodParticle;
+    [SerializeField] private ParticleSystem possessParticle;
     
     private float health;
     public float Health { get => health; }
+    public bool IsDead { get => health <= 0; }
 
     private bool isPossessed = false;
-    public bool IsPossessed { get => isPossessed; set => isPossessed = value; }
+    public bool IsPossessed { get => isPossessed; set {
+        spriteRenderer.sprite = animalType.PossessedSprite;
+        possessParticle.Play();
+        isPossessed = value;
+        if(isPossessed && animalPossessEvent != null) 
+            animalPossessEvent(this);
+    } }
 
     private Animal target;
     public Animal Target { get => target; set => target = value; }
@@ -37,6 +54,8 @@ public class Animal : MonoBehaviour {
 
         AnimalManager.instance.RegisterAnimal(this);
         isInitialized = true;
+
+        aiHandler.Initialize();
     }
 
     private void Start() {
@@ -73,8 +92,12 @@ public class Animal : MonoBehaviour {
     }
 
     public void Attack(Animal target) {
-        if(health <= 0) return;
+        if(IsDead) return;
         if(target.Damage(animalType.Damage)) {
+            if(animalDeathEvent != null) 
+                animalDeathEvent(target, this);
+            if(target.GetAnimalType().PlayEatenEffect)
+                bloodParticle.Play();
             if(target.IsPossessed)
                 AnimalManager.instance.Controller.Possess(this);
             Heal(target.GetAnimalType().HealthFillRate);
@@ -91,8 +114,8 @@ public class Animal : MonoBehaviour {
 
     public bool Damage(float damage) {
         health -= damage;
-        float f = health / animalType.MaxHealth;
-        spriteRenderer.color = new Color(f, f, f, 1);
+        bloodParticle.Play();
+        StartCoroutine(DamageEffect());
         if(health <= 0)
             Destroy(gameObject);
         return health <= 0;
@@ -100,12 +123,16 @@ public class Animal : MonoBehaviour {
 
     public void Heal(float heal) {
         health = Mathf.Min(health + target.GetAnimalType().HealthFillRate, animalType.MaxHealth);
-        float f = health / animalType.MaxHealth;
-        spriteRenderer.color = new Color(f, f, f, 1);
     }
 
     public SOAnimal GetAnimalType() {
         return animalType;
+    }
+
+    private IEnumerator DamageEffect() {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.25f);
+        spriteRenderer.color = Color.white;
     }
 
 }

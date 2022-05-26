@@ -12,14 +12,14 @@ public class AIHandler : MonoBehaviour {
     private float aiTickInterval;
     private AbstractAIGoal currentGoal;
 
-    private void Start() {
+    public void Initialize() {
         aiTickInterval = owner.GetAnimalType().DetectionInterval;
         InitializeAIs();
         StartCoroutine(TickAIGoals());
     }
 
     private void FixedUpdate() {
-        if(currentGoal && currentGoal.CanKeepTicking())
+        if(currentGoal && currentGoal.CanKeepTicking() && !owner.IsDead)
             currentGoal.OnTick();
     }
 
@@ -33,7 +33,7 @@ public class AIHandler : MonoBehaviour {
     }
 
     private IEnumerator TickAIGoals() {
-        while(isActive) {
+        while(isActive && !owner.IsDead) {
 
             // Target Selector
             Animal target = null;

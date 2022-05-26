@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Snake
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 0d358db193f15b14896f1a160d52976c, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: ff0e8289e332e4545b807578e8aae648, type: 3}
   _id: snake
   _name: Snake
-  _spawnCost: 0
+  _spawnCost: 1
+  _playEatenEffect: 1
   _maxHealth: 40
   _healthFillRate: 20
   _damage: 8
@@ -23,7 +25,7 @@ MonoBehaviour:
   _scale: 1
   _movementSpeed: 4
   _detectionRadius: 18
-  _detectionInterval: 0.05
+  _detectionInterval: 0.2
   _prey:
   - {fileID: 11400000, guid: 1d0bc16c34f667144bd6a5b9c4bccb3d, type: 2}
   - {fileID: 11400000, guid: 2ed517325f8a9e94a8d6b5f65408da9e, type: 2}

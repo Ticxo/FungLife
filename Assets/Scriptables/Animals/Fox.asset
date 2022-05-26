@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Fox
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 954d3206801a274438e98fa88ca22301, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: c824c3f3b04284a49b187fe365974e5d, type: 3}
   _id: fox
   _name: Fox
-  _spawnCost: 0
+  _spawnCost: 1
+  _playEatenEffect: 1
   _maxHealth: 40
   _healthFillRate: 20
   _damage: 8
@@ -23,7 +25,7 @@ MonoBehaviour:
   _scale: 1
   _movementSpeed: 6
   _detectionRadius: 15
-  _detectionInterval: 0.05
+  _detectionInterval: 0.2
   _prey:
   - {fileID: 11400000, guid: 1d0bc16c34f667144bd6a5b9c4bccb3d, type: 2}
   - {fileID: 11400000, guid: a84fd4d2513693c4091754a903ae3469, type: 2}

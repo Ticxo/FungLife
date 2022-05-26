@@ -1,21 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     
     private Vector2 moveInput;
-    private bool awaitSuicide;
     [SerializeField] private Animal respawnPrefab;
     [SerializeField] private SOAnimal respawnType;
     [SerializeField] private Animal possessed;
+    [Header("Suicide")]
+    [SerializeField] private float suicideCooldown;
+
+    private float suicideCooldownTimer;
+    private bool awaitSuicide;
+
+    [SerializeField] private Animator cameraAnimator;
+    private bool gameStarted;
 
     public Animal Possessed { get => possessed; }
 
     private void Start() {
-        Possess(possessed);
+        AnimalManager.instance.Controller = this;
+        PossessNoTrigger(possessed);
+    }
+
+    private void Update() {
+        if(suicideCooldownTimer > 0)
+            suicideCooldownTimer = Mathf.Max(suicideCooldownTimer - Time.deltaTime, 0);
+        
+        if(possessed == null) {
+            transform.position = Vector3.zero;
+            return;
+        }
+        transform.position = possessed.transform.position;
     }
 
     private void FixedUpdate() {
@@ -29,13 +48,7 @@ public class PlayerController : MonoBehaviour {
             Possess(fungus);
             awaitSuicide = false;
         }
-
-        if(possessed == null) {
-            transform.position = Vector3.zero;
-            return;
-        }
-        possessed.HandleControl(moveInput);
-        transform.position = possessed.transform.position;
+        possessed?.HandleControl(moveInput);
     }
 
     public void OnMove(InputAction.CallbackContext ctx) {
@@ -55,16 +68,35 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void OnSuicide(InputAction.CallbackContext ctx) {
-        if(!ctx.performed) 
+        if(!ctx.performed || suicideCooldownTimer > 0 || !gameStarted)
             return;
         awaitSuicide = true;
+        suicideCooldownTimer = suicideCooldown;
+    }
+
+    public void OnReload(InputAction.CallbackContext ctx) {
+        if(!ctx.performed) 
+            return;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Possess(Animal target) {
+        if(!gameStarted) {
+            cameraAnimator.SetBool("isStarted", true);
+            gameStarted = true;
+        }
+        PossessNoTrigger(target);
+    }
+
+    public void PossessNoTrigger(Animal target) {
         if(possessed != null)
             possessed.IsPossessed = false;
         target.IsPossessed = true;
         possessed = target;
+    }
+
+    public float GetSuicideCooldownProgress() {
+        return 1 - suicideCooldownTimer / suicideCooldown;
     }
 
 }

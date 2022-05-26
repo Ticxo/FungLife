@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Bird
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 7c5ebddcd1fd7bd40b2c19bd24b0cf6b, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: 33e6ce60d8350f441924ecbaf1149ff4, type: 3}
   _id: bird
   _name: Bird
-  _spawnCost: 0
+  _spawnCost: 1
+  _playEatenEffect: 1
   _maxHealth: 20
   _healthFillRate: 10
   _damage: 5
@@ -23,7 +25,7 @@ MonoBehaviour:
   _scale: 0.8
   _movementSpeed: 7
   _detectionRadius: 25
-  _detectionInterval: 0.05
+  _detectionInterval: 0.2
   _prey:
   - {fileID: 11400000, guid: 729b21e7d16ed104f96375c453ba9116, type: 2}
   - {fileID: 11400000, guid: a84fd4d2513693c4091754a903ae3469, type: 2}

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Frog
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 388fc7e1663b54942869026ce8c8f9e2, type: 3}
+  _possessedSprite: {fileID: 21300000, guid: bfa0a4ef8899d2745abaed299c0a7c63, type: 3}
   _id: frog
   _name: Frog
-  _spawnCost: 0
+  _spawnCost: 1
+  _playEatenEffect: 1
   _maxHealth: 30
   _healthFillRate: 10
   _damage: 4
@@ -23,7 +25,7 @@ MonoBehaviour:
   _scale: 0.8
   _movementSpeed: 3
   _detectionRadius: 12
-  _detectionInterval: 0.05
+  _detectionInterval: 0.2
   _prey:
   - {fileID: 11400000, guid: 747d8cd9e6d3abb49a95353e9ad20885, type: 2}
   - {fileID: 11400000, guid: 729b21e7d16ed104f96375c453ba9116, type: 2}
