@@ -64,7 +64,7 @@ public class Animal : MonoBehaviour {
         }
     }
 
-    private void FixedUpdate() {
+    private void Update() {
         if(isWalking)
             spriteRenderer.transform.rotation = Quaternion.Euler(0, 0, waddleAngle * Mathf.Sin((Time.time - spawnTime) * waddleSpeed));
         else

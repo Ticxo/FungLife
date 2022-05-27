@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Animal", menuName = "Reapershroom/New Animal", order = 0)]
+[CreateAssetMenu(fileName = "New Animal", menuName = "FungLife/New Animal", order = 0)]
 public class SOAnimal : ScriptableObject {
     
     [Header("General")]
