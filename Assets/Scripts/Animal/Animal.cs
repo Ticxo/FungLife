@@ -76,7 +76,7 @@ public class Animal : MonoBehaviour {
     }
 
     public void HandleControl(Vector2 control) {
-        if(animalType.MovementSpeed > 0 && control != Vector2.zero) {
+        if(!IsDead && animalType.MovementSpeed > 0 && control != Vector2.zero) {
             Vector3 pos = transform.position;
             pos += Time.fixedDeltaTime * animalType.MovementSpeed * (Vector3) control;
             _rigidbody.MovePosition(pos);

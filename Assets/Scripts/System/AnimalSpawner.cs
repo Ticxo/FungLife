@@ -26,7 +26,7 @@ public class AnimalSpawner : MonoBehaviour {
     }
 
     private IEnumerator SpawnAnimals() {
-        while(isActive) {
+        while(isActive && !GameManager.instance.GameEnded) {
             
             yield return new WaitForSeconds(spawnInterval);
 

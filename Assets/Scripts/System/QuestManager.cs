@@ -13,7 +13,7 @@ public class QuestManager : MonoBehaviour {
     private void Start() {
 
         GenerateRandomAvoidQuest();
-        GenerateRandomPossessQuest();
+        GenerateRandomAvoidQuest();
         GenerateRandomPossessQuest();
         GenerateRandomPossessQuest();
         GenerateRandomPossessQuest();
@@ -34,6 +34,15 @@ public class QuestManager : MonoBehaviour {
         var animal = questAnimals[id];
         questAnimals.RemoveAt(id);
         return animal;
+    }
+
+    public float GetQuestBonus() {
+        float bonus = 1;
+        foreach(var quest in quests) {
+            if(quest.IsComplete)
+                bonus += 0.2f;
+        }
+        return bonus;
     }
 
 }

@@ -1906,19 +1906,7 @@ MonoBehaviour:
     m_ActionId: 06fa7e8c-8fec-40af-be0b-c080fcab313a
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1088154526}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnSelect
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 0ce08130-247a-4242-8dd9-45d40cac6a88
     m_ActionName: Player/Select[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -1938,19 +1926,7 @@ MonoBehaviour:
     m_ActionId: 0d6fda77-6a96-4b97-bb81-41e568adbf2b
     m_ActionName: Player/Suicide[/Keyboard/shift]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1088154526}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnReload
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 634e3cf9-1a8b-4737-944e-3f7d1da7f709
     m_ActionName: Player/Restart[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
@@ -2219,6 +2195,8 @@ GameObject:
   - component: {fileID: 1287976468}
   - component: {fileID: 1287976470}
   - component: {fileID: 1287976469}
+  - component: {fileID: 1287976471}
+  - component: {fileID: 1287976472}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -2233,7 +2211,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287976467}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2242,10 +2220,10 @@ RectTransform:
   m_Father: {fileID: 1743026141}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 210.5}
-  m_SizeDelta: {x: -901, y: -469}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -49}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1287976469
 MonoBehaviour:
@@ -2285,6 +2263,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287976467}
   m_CullTransparentMesh: 1
+--- !u!95 &1287976471
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287976467}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c74bf5dff5f9957428f154d6ce11a0fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1287976472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287976467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6924a740ce1eb654f9f385107b98e21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1084669469}
+  timerAnimator: {fileID: 1287976471}
 --- !u!1 &1293739770
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,6 +3031,7 @@ GameObject:
   - component: {fileID: 1755321054}
   - component: {fileID: 1755321056}
   - component: {fileID: 1755321055}
+  - component: {fileID: 1755321057}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -3143,6 +3156,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755321053}
   m_CullTransparentMesh: 1
+--- !u!114 &1755321057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755321053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cee4d214a74544ea4168f8c9aa76a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1755321055}
 --- !u!1 &1878681290
 GameObject:
   m_ObjectHideFlags: 0
@@ -3463,6 +3489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f64bfee6c01c54f91b23ad87ff8700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLimit: 300
+  questManager: {fileID: 1143686242}
+  endScreenLoadTime: 1
 --- !u!1 &1965946200
 GameObject:
   m_ObjectHideFlags: 0

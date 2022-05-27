@@ -91,8 +91,8 @@ public class PlayerController : MonoBehaviour {
     public void PossessNoTrigger(Animal target) {
         if(possessed != null)
             possessed.IsPossessed = false;
-        target.IsPossessed = true;
         possessed = target;
+        target.IsPossessed = true;
     }
 
     public float GetSuicideCooldownProgress() {
