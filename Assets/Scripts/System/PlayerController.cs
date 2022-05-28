@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Animal possessed;
     [Header("Suicide")]
     [SerializeField] private float suicideCooldown;
+    [SerializeField] private float teleportBorder;
 
     private float suicideCooldownTimer;
     private bool awaitSuicide;
@@ -40,12 +41,19 @@ public class PlayerController : MonoBehaviour {
     private void FixedUpdate() {
 
         if(awaitSuicide) {
-            var pos = possessed.transform.position;
-            possessed.Damage(possessed.GetAnimalType().MaxHealth);
-
-            var fungus = Instantiate(respawnPrefab, pos, Quaternion.identity);
-            fungus.Initialize(respawnType);
-            Possess(fungus);
+            if(possessed.GetAnimalType() != respawnType) {
+                Vector3 pos = possessed.transform.position;
+                possessed.Damage(possessed.GetAnimalType().MaxHealth);
+                var fungus = Instantiate(respawnPrefab, pos, Quaternion.identity);
+                fungus.Initialize(respawnType);
+                Possess(fungus);
+            }else {
+                var pos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                pos.x = Mathf.Clamp(pos.x, -teleportBorder, teleportBorder);
+                pos.y = Mathf.Clamp(pos.y, -teleportBorder, teleportBorder);
+                pos.z = 0;
+                possessed.transform.position = pos;
+            }
             awaitSuicide = false;
         }
         possessed?.HandleControl(moveInput);
