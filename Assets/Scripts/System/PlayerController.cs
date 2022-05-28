@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour {
                 pos.y = Mathf.Clamp(pos.y, -teleportBorder, teleportBorder);
                 pos.z = 0;
                 possessed.transform.position = pos;
+                possessed.PossessParticle.Play();
             }
             awaitSuicide = false;
         }

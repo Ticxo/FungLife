@@ -39,6 +39,7 @@ public class Animal : MonoBehaviour {
 
     private Animal hunter;
     public Animal Hunter { get => hunter; set => hunter = value; }
+    public ParticleSystem PossessParticle { get => possessParticle; }
 
     private float spawnTime;
     private bool isWalking;
