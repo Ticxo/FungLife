@@ -696,6 +696,7 @@ GameObject:
   - component: {fileID: 316560223}
   - component: {fileID: 316560225}
   - component: {fileID: 316560224}
+  - component: {fileID: 316560226}
   m_Layer: 5
   m_Name: Shroom
   m_TagString: Untagged
@@ -761,6 +762,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316560222}
   m_CullTransparentMesh: 1
+--- !u!114 &316560226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316560222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2221a7bacf31a6641b026b8cf2484ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 2147399417}
+  dialogueBox: {fileID: 1888572152}
+  hoverMessage: Look at you! Small, cute, and super deadly!
 --- !u!1 &360261361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 111.20001, y: 79.29999}
+  m_AnchoredPosition: {x: 107.79993, y: 79.29999}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406635168
@@ -1214,7 +1230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.799957, y: 60.549988}
+  m_AnchoredPosition: {x: 15.200012, y: 60.549988}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &414327926
@@ -1266,6 +1282,7 @@ GameObject:
   - component: {fileID: 423730992}
   - component: {fileID: 423730994}
   - component: {fileID: 423730993}
+  - component: {fileID: 423730995}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -1333,6 +1350,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423730991}
   m_CullTransparentMesh: 1
+--- !u!114 &423730995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423730991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2221a7bacf31a6641b026b8cf2484ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 2147399417}
+  dialogueBox: {fileID: 1888572152}
+  hoverMessage: That's the title! Low effort, but it works!
 --- !u!1 &556108378
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,7 +3116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.199951, y: 79.29999}
+  m_AnchoredPosition: {x: 7.600006, y: 79.29999}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812443677
@@ -3566,10 +3598,10 @@ RectTransform:
   m_Father: {fileID: 908729716}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2087316512
 GameObject:
