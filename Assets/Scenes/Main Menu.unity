@@ -608,7 +608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 2147399417}
   dialogueBox: {fileID: 1888572152}
-  hoverMessage: Eat food to heal!
+  hoverMessage: Get close to a prey to eat and heal!
 --- !u!1 &282535861
 GameObject:
   m_ObjectHideFlags: 0
